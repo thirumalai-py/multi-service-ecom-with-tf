@@ -10,3 +10,19 @@ module "ec2" {
   security_groups = var.security_groups
   tag_name        = var.tag_name
 }
+
+# Upload and execute deploy script on EC2
+
+resource "null_resource" "post_config" {
+  depends_on = [module.ec2]
+
+  connection {
+    type = "ssh"
+    user = "ubuntu"
+    host        = module.ec2.EC2_Public_Ip
+    private_key = file("~/.ssh/thirumalai-b10.pem")
+  }
+
+  
+
+}

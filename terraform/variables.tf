@@ -42,3 +42,10 @@ variable "env_name" {
   description = "value of env name"
   type        = string
 }
+
+variable "mongodb_uri" {
+  description = "MongoDB connection string"
+  type        = string
+  sensitive   = true
+}
+
