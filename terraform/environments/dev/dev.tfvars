@@ -1,0 +1,10 @@
+ami_id = "ami-0f918f7e67a3323f0"
+instance_type = "t3.micro"
+ec2_subnet_id = "subnet-083a8c50c53d0402d"
+security_groups=["sg-01cfb7e0c039ac2af"]
+key_name = "thirumalai-b10"
+tag_name = "thiru-10-module-tf-ec2-dev"
+volume_size = 12
+volume_type = "gp3"
+env_name="dev"
+bucket_name="dev-thiru-10-module-tf-s3"
