@@ -44,8 +44,13 @@ variable "env_name" {
 }
 
 variable "mongodb_uri" {
-  description = "MongoDB connection string"
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
+
+variable "jwt_secret" {
+  type      = string
+  sensitive = true
+}
+
 

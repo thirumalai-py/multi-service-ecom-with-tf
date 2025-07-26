@@ -11,18 +11,35 @@ module "ec2" {
   tag_name        = var.tag_name
 }
 
-# Upload and execute deploy script on EC2
+# 1. Render your shell script with dynamic values
+data "template_file" "docker_script" {
+  template = file("${path.module}/scripts/deploy.sh.tpl")
+  vars = {
+    MONGODB_URI = var.mongodb_uri
+    JWT_SECRET  = var.jwt_secret
+  }
+}
 
-resource "null_resource" "post_config" {
+# 2. Use remote-exec to run the script on the EC2
+resource "null_resource" "run_deployment_script" {
   depends_on = [module.ec2]
 
   connection {
-    type = "ssh"
-    user = "ubuntu"
+    type        = "ssh"
     host        = module.ec2.EC2_Public_Ip
-    private_key = file("~/.ssh/thirumalai-b10.pem")
+    user        = "ubuntu"
+    private_key = file(var.private_key_path)
   }
 
-  
+  provisioner "file" {
+    content     = data.template_file.docker_script.rendered
+    destination = "/home/ubuntu/deploy.sh"
+  }
 
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /home/ubuntu/deploy.sh",
+      "/home/ubuntu/deploy.sh ${module.ec2.EC2_Public_Ip}"
+    ]
+  }
 }
