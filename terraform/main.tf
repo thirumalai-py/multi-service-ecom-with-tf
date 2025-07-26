@@ -17,6 +17,7 @@ data "template_file" "docker_script" {
   vars = {
     MONGODB_URI = var.mongodb_uri
     JWT_SECRET  = var.jwt_secret
+    EC2_IP      = module.ec2.EC2_Public_Ip
   }
 }
 
