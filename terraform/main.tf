@@ -10,9 +10,3 @@ module "ec2" {
   security_groups = var.security_groups
   tag_name        = var.tag_name
 }
-
-module "s3" {
-  source      = "./modules/s3"
-  bucket_name = var.bucket_name
-  env_name    = var.env_name
-}
