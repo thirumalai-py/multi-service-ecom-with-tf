@@ -7,4 +7,3 @@ tag_name = "thiru-10-module-tf-ec2-dev"
 volume_size = 12
 volume_type = "gp3"
 env_name="dev"
-bucket_name="dev-thiru-10-module-tf-s3"
