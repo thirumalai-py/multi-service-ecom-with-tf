@@ -53,4 +53,10 @@ variable "jwt_secret" {
   sensitive = true
 }
 
+variable "private_key_path" {
+  description = "Path to the private SSH key used for EC2 access"
+  type        = string
+}
+
+
 
