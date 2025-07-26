@@ -2,6 +2,12 @@
 
 EC2_IP=$1
 
+sudo apt update -y
+sudo apt install docker.io -y
+sudo apt systemctl start docker 
+sudo apt systemctl enable docker
+
+
 docker run -d -p 3001:3001 \
 --name user-app \
 -e PORT="3001" \
