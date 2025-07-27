@@ -134,5 +134,59 @@ jwt_secret        = "your-jwt-secret"
 
 ---
 
-## ✅ Output
+## ✅ Outputs
 
+### Front Website ouput
+
+**Home Page**
+
+![alt text](output/home.png)
+
+**Cart Page**
+
+![alt text](output/cart.png)
+
+**Profile Page**
+
+![alt text](output/profile.png)
+
+**Product Page**
+
+![alt text](output/product.png)
+
+### Terraform outputs
+
+**Connection to host Remote via Exec**
+
+![alt text](output/remote_exec.png)
+
+**Pull and run User Image - Remote Exec**
+
+![alt text](output/user_pull.png)
+
+
+**Pull and run Product Image - Remote Exec**
+
+![alt text](output/products_pull.png)
+
+
+**Pull and run Cart Image - Remote Exec**
+
+![alt text](output/cart_pull.png)
+
+
+**Pull and run Order Image - Remote Exec**
+
+![alt text](output/order_pull.png)
+
+
+**Pull and run Frontend Image - Remote Exec**
+
+![alt text](output/front_pull.png)
+
+
+### EC2 Docker Status Output
+
+All the images are successfully pulled and working
+
+![alt text](output/ec2_output.png)
