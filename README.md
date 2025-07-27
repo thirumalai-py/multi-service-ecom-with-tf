@@ -152,7 +152,7 @@ jwt_secret        = "your-jwt-secret"
 
 **Product Page**
 
-![alt text](output/product.png)
+![alt text](output/products.png)
 
 ### Terraform outputs
 
