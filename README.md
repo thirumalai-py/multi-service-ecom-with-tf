@@ -77,6 +77,17 @@ REACT_APP_ORDER_SERVICE_URL=http://<EC2_IP>:3004
 - AWS Key Pair for EC2 access
 - Public Docker images built and pushed
 
+**Build Multi-Architecture Docker Images (Recommended for Public Images)**
+
+To ensure your Docker images are compatible with both `amd64` and `arm64` EC2 instance types, you should build them with multi-architecture support.
+
+Use Docker Buildx to build and push your image for multiple platforms:
+
+```
+docker buildx create --use
+docker buildx build --platform linux/amd64,linux/arm64 -t thirumalaipy/ecom-users:1.0 --push .
+```
+
 ---
 
 ## 🌱 Terraform Setup
