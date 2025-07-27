@@ -56,6 +56,7 @@ REACT_APP_ORDER_SERVICE_URL=http://<EC2_IP>:3004
 ├── main.tf
 ├── variables.tf
 ├── outputs.tf
+├── providers.tf
 ├── environments/
 │   └── dev/
 │       ├── dev_backend.tfvars     # S3 backend configuration for dev
