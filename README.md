@@ -160,7 +160,7 @@ jwt_secret        = "your-jwt-secret"
 
 **Profile Page**
 
-![alt text](output/profile.png)
+![alt text](output/profile_page.png)
 
 **Product Page**
 
