@@ -156,6 +156,10 @@ jwt_secret        = "your-jwt-secret"
 
 ### Terraform outputs
 
+**S3 Bucket State File Saved**
+
+![alt text](output/s3_tfstafe.png)
+
 **Connection to host Remote via Exec**
 
 ![alt text](output/remote_exec.png)
