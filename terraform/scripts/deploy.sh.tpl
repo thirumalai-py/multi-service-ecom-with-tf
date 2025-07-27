@@ -4,11 +4,12 @@ EC2_IP=$1
 
 sudo apt update -y
 sudo apt install docker.io -y
-sudo service docker start
-sudo service docker enable || true  # "enable" might not exist, so we ignore errors
 sudo usermod -aG docker ubuntu
-newgrp docker || true
 
+# sudo service docker start
+# sudo service docker enable || true  # "enable" might not exist, so we ignore errors
+# sudo usermod -aG docker ubuntu
+# newgrp docker || true
 
 
 docker run -d -p 3001:3001 \
